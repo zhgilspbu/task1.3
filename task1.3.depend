@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1631190609 source:c:\users\st086873\documents\task1.3\main.cpp
+	"clGraph.h"
+
+1631191294 c:\users\st086873\documents\task1.3\include\clgraph.h
+	<iostream>
+	"clDraw.h"
+	<queue>
+
+1631192354 c:\users\st086873\documents\task1.3\include\cldraw.h
+
+1631190817 c:\users\st086873\documents\task1.3\include\queue.h
+	<cstddef>
+
+1631190141 source:c:\users\st086873\documents\task1.3\src\cldraw.cpp
+	"clDraw.h"
+
+1631192005 source:c:\users\st086873\documents\task1.3\src\clgraph.cpp
+	"clGraph.h"
+
