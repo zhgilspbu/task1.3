@@ -3,16 +3,27 @@
 #include <iostream>
 #include "clDraw.h"
 #include <queue>
+#include <iostream>
+#include<graphics.h>
+#include<conio.h>
+#include<math.h>
+#include <string>
+#include<sstream>
+#include "string.h"
+#define PI 3.14159265
 
 using namespace std;
-class clGraph: public clDraw
+class clGraph : public clDraw
 {
     public:
         clGraph(int num,int **g, int* c, int *u);
         virtual ~clGraph();
 
-        void show();
-        int bfs(int v,int n,int *&used,queue<int> q,int** graph);
+        int bfs(int v);
+        int check();
+        int** Getgraph(){return graph;};
+        int* Getcolor(){return color;};
+        void show(int flag);
   /*
         **int create_matrix(){
             **int g=new int*[n];
