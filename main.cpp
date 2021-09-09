@@ -21,8 +21,8 @@ int flag=0;
         }
     }
 clGraph gr(n,graph,color,used);
-
-
+flag=gr.check();
+gr.show(1);
 
 return 0;
 }
