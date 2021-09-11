@@ -22,7 +22,7 @@ int flag=0;
     }
 clGraph gr(n,graph,color,used);
 flag=gr.check();
-gr.show(1);
+gr.show(flag);
 
 return 0;
 }
