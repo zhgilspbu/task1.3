@@ -48,7 +48,7 @@ for (int i=0;i<n;i++){
         if (!used[i]){
 int ch=clGraph::bfs(i);
 if (!ch){
-    return 0; // возможность нарисовать
+    return 0;
 }
 }}
     for (int i=0;i<n;i++){
@@ -61,9 +61,11 @@ void clGraph::show(int flag){
 
 int* center=new int[n];
 int gd=CUSTOM;
-int gm=CUSTOM_MODE(800,800);
+int gm=CUSTOM_MODE(1200,800);
 initgraph(&gd,&gm,"");
 //line(1,1,100,100);
+if (flag){
+ //circle(100,100,20);
 int first=0, second=0;
 stringstream ss;
 for (int i=0;i<n;i++){
@@ -95,7 +97,33 @@ for (int i=0;i<n;i++){
         }
     }
 }
+}else{
+stringstream ss;
+for (int i=0;i<n;i++){
+    ss<<i;
+    string s=ss.str();
+    char const *st=s.c_str();
+    circle(300+i*75,200+i*50,20);
+    outtextxy(300+i*75,200+i*50,st);
+    center[i]=200+i*50;//vtoraya koordinata
+    ss.str("");
+}
+for (int i=0;i<n;i++){
+    for (int j=0;j<n;j++){
+        if (graph[i][j] && i>j){
+            if (i-j==1 ){
 
+                line(center[i]*1.5-40/sqrt(13),center[i]-40/sqrt(13),center[j]*1.5+40/sqrt(13),center[j]+40/sqrt(13));
+            }
+            else{
+                arc((center[i]*1.5+center[j]*1.5)/2,(center[i]+center[j])/2,146+(180*(i%2)),326.6+180*(i%2),(center[i]-center[j]));
+            }
+        }
+    }
+}
+
+
+}
 readkey();
 closegraph();
 }
